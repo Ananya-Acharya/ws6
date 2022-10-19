@@ -1,0 +1,24 @@
+ 1001  mkdir PRODUCTS
+ 1002  DATETIME=`date "+%Y%m%_%H%M%S"`
+ 1003  echo DATETIME
+ 1004  echo $DATETIME
+ 1005  DATETIME=`date "+%Y%m%d_%H%M%S"`
+ 1006  echo $DATETIME
+ 1007  grep -P "0446608653" amazon_reviews_us_Books_v1_02.tsv > PRODUCTS/0446608653.$DATETIME.txt
+ 1008  sed -n 10000p amazon_reviews_us_Books_v1_02.tsv >> PRODUCTS/$productID.$DATETIME.txt
+ 1009  vi avg_rating.sh
+ 1010  chmod 777 avg_rating.sh 
+ 1011  vi cronfile
+ 1012  more avg_rating.sh
+ 1013  crontab cronfile
+ 1014  crontab -l
+ 1015  crontab -r
+ 1016  vi avg_rating.sh 
+ 1017  crontab -l
+ 1018  crontab cronfile
+ 1019  more cron_out.log
+ 1020  l
+ 1021  more cron_out.log
+ 1022  l
+ 1023  more cron_out.log
+ 1024  history > cmds.log
